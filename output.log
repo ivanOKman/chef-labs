@@ -1,0 +1,79 @@
+Node node1 exists, overwrite it? (Y/N) Client node1 exists, overwrite it? (Y/N) 192.168.11.101 -----> Existing Chef installation detected
+192.168.11.101 Starting the first Chef Client run...
+192.168.11.101 [2017-04-11T00:01:46+01:00] INFO: Forking chef instance to converge...
+192.168.11.101 Starting Chef Client, version 12.19.36[0m
+192.168.11.101 [2017-04-11T00:01:46+01:00] INFO: *** Chef 12.19.36 ***
+192.168.11.101 [2017-04-11T00:01:46+01:00] INFO: Platform: x86_64-linux
+192.168.11.101 [2017-04-11T00:01:46+01:00] INFO: Chef-client pid: 25111
+192.168.11.101 [2017-04-11T00:01:53+01:00] INFO: Setting the run_list to ["role[jboss-role]"] from CLI options
+192.168.11.101 [2017-04-11T00:01:53+01:00] INFO: Run List is [role[jboss-role]]
+192.168.11.101 [2017-04-11T00:01:53+01:00] INFO: Run List expands to [jboss]
+192.168.11.101 [2017-04-11T00:01:53+01:00] INFO: Starting Chef Run for node1
+192.168.11.101 [2017-04-11T00:01:53+01:00] INFO: Running start handlers
+192.168.11.101 [2017-04-11T00:01:53+01:00] INFO: Start handlers complete.
+192.168.11.101 [2017-04-11T00:01:53+01:00] INFO: HTTP Request Returned 404 Not Found: 
+192.168.11.101 [2017-04-11T00:01:53+01:00] INFO: Error while reporting run start to Data Collector. URL: https://chefsrv/organizations/lab8/data-collector Exception: 404 -- 404 "Not Found"  (This is normal if you do not have Chef Automate)
+192.168.11.101 resolving cookbooks for run list: ["jboss"][0m
+192.168.11.101 [2017-04-11T00:01:53+01:00] INFO: Loading cookbooks [jboss@0.1.0, java_se@7.79.7]
+192.168.11.101 Synchronizing Cookbooks:[0m
+192.168.11.101   - jboss (0.1.0)[0m
+192.168.11.101   - java_se (7.79.7)[0m
+192.168.11.101 Installing Cookbook Gems:[0m
+192.168.11.101 Compiling Cookbooks...[0m
+192.168.11.101 Converging 20 resources[0m
+192.168.11.101 Recipe: java_se::_linux_install[0m
+192.168.11.101   * ruby_block[fetch http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz] action run[2017-04-11T00:01:53+01:00] INFO: Processing ruby_block[fetch http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz] action run (java_se::_linux_install line 66)
+192.168.11.101  (skipped due to not_if)
+192.168.11.101   * ruby_block[set-env-java-home] action run[2017-04-11T00:01:55+01:00] INFO: Processing ruby_block[set-env-java-home] action run (java_se::_linux_install line 12)
+192.168.11.101  (skipped due to not_if)
+192.168.11.101   * directory[/etc/profile.d] action create[2017-04-11T00:01:55+01:00] INFO: Processing directory[/etc/profile.d] action create (java_se::_linux_install line 19)
+192.168.11.101  (up to date)
+192.168.11.101   * file[/etc/profile.d/jdk.sh] action create[2017-04-11T00:01:55+01:00] INFO: Processing file[/etc/profile.d/jdk.sh] action create (java_se::_linux_install line 23)
+192.168.11.101  (up to date)
+192.168.11.101   * ruby_block[set JAVA_HOME in /etc/environment] action run[2017-04-11T00:01:55+01:00] INFO: Processing ruby_block[set JAVA_HOME in /etc/environment] action run (java_se::_linux_install line 28)
+192.168.11.101  (skipped due to only_if)
+192.168.11.101   * yum_package[glibc] action install[2017-04-11T00:01:55+01:00] INFO: Processing yum_package[glibc] action install (java_se::_linux_install line 38)
+192.168.11.101  (skipped due to only_if)
+192.168.11.101   * yum_package[tar] action install[2017-04-11T00:01:55+01:00] INFO: Processing yum_package[tar] action install (java_se::_linux_install line 43)
+192.168.11.101  (up to date)
+192.168.11.101   * ruby_block[adding java to /usr/lib/jvm/jdk1.7.0_79] action run[2017-04-11T00:02:04+01:00] INFO: Processing ruby_block[adding java to /usr/lib/jvm/jdk1.7.0_79] action run (java_se::_linux_install line 55)
+192.168.11.101  (skipped due to not_if)
+192.168.11.101   * template[adding /usr/lib/jvm/.java.jinfo for debian] action create[2017-04-11T00:02:04+01:00] INFO: Processing template[adding /usr/lib/jvm/.java.jinfo for debian] action create (java_se::_linux_install line 85)
+192.168.11.101  (skipped due to only_if)
+192.168.11.101   * link[/usr/lib/jvm/java] action create[2017-04-11T00:02:04+01:00] INFO: Processing link[/usr/lib/jvm/java] action create (java_se::_linux_install line 101)
+192.168.11.101  (up to date)
+192.168.11.101   * ruby_block[update-alternatives] action run[2017-04-11T00:02:04+01:00] INFO: Processing ruby_block[update-alternatives] action run (java_se::_linux_install line 106)
+192.168.11.101 [2017-04-11T00:02:08+01:00] INFO: skipping setting alternative for jdeps. Command /usr/lib/jvm/java/bin/jdeps does not exist.
+192.168.11.101 [2017-04-11T00:02:08+01:00] INFO: skipping setting alternative for jjs. Command /usr/lib/jvm/java/bin/jjs does not exist.
+192.168.11.101 [2017-04-11T00:02:11+01:00] INFO: ruby_block[update-alternatives] called
+192.168.11.101 
+192.168.11.101     [32m- execute the ruby block update-alternatives[0m
+192.168.11.101 [0m  * link[/usr/lib/jvm/default-java] action create[2017-04-11T00:02:11+01:00] INFO: Processing link[/usr/lib/jvm/default-java] action create (java_se::_linux_install line 170)
+192.168.11.101  (skipped due to only_if)
+192.168.11.101 Recipe: jboss::default[0m
+192.168.11.101   * remote_file[/opt/jboss7.zip] action create_if_missing[2017-04-11T00:02:11+01:00] INFO: Processing remote_file[/opt/jboss7.zip] action create_if_missing (jboss::default line 7)
+192.168.11.101  (up to date)
+192.168.11.101   * remote_file[/opt/hudson.zip] action create_if_missing[2017-04-11T00:02:11+01:00] INFO: Processing remote_file[/opt/hudson.zip] action create_if_missing (jboss::default line 13)
+192.168.11.101  (up to date)
+192.168.11.101   * yum_package[unzip] action install[2017-04-11T00:02:11+01:00] INFO: Processing yum_package[unzip] action install (jboss::default line 19)
+192.168.11.101  (up to date)
+192.168.11.101   * execute[unzip_jboss] action run[2017-04-11T00:02:11+01:00] INFO: Processing execute[unzip_jboss] action run (jboss::default line 23)
+192.168.11.101  (skipped due to not_if)
+192.168.11.101   * execute[unzip_app] action run[2017-04-11T00:02:11+01:00] INFO: Processing execute[unzip_app] action run (jboss::default line 33)
+192.168.11.101  (skipped due to not_if)
+192.168.11.101   * template[/opt/jboss-as-7.1.1.Final/standalone/deployments/hudson/hudson.xml] action create[2017-04-11T00:02:11+01:00] INFO: Processing template[/opt/jboss-as-7.1.1.Final/standalone/deployments/hudson/hudson.xml] action create (jboss::default line 39)
+192.168.11.101  (up to date)
+192.168.11.101   * template[/etc/init.d/jboss] action create[2017-04-11T00:02:12+01:00] INFO: Processing template[/etc/init.d/jboss] action create (jboss::default line 46)
+192.168.11.101  (up to date)
+192.168.11.101   * service[jboss] action enable[2017-04-11T00:02:12+01:00] INFO: Processing service[jboss] action enable (jboss::default line 56)
+192.168.11.101  (up to date)
+192.168.11.101   * service[jboss] action start[2017-04-11T00:02:12+01:00] INFO: Processing service[jboss] action start (jboss::default line 56)
+192.168.11.101  (up to date)
+192.168.11.101 [2017-04-11T00:02:12+01:00] INFO: Chef Run complete in 19.304291563 seconds
+192.168.11.101 [0m
+192.168.11.101 Running handlers:[0m
+192.168.11.101 [2017-04-11T00:02:12+01:00] INFO: Running report handlers
+192.168.11.101 Running handlers complete
+192.168.11.101 [0m[2017-04-11T00:02:12+01:00] INFO: Report handlers complete
+192.168.11.101 Chef Client finished, 1/21 resources updated in 25 seconds[0m
+192.168.11.101 [2017-04-11T00:02:12+01:00] INFO: Sending resource update report (run-id: 59a3004c-504a-4dbc-b427-453d55518ede)

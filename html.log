@@ -1,0 +1,16 @@
+HTTP/1.1 302 Moved Temporarily
+Server: Apache-Coyote/1.1
+Location: http://127.0.0.1:8080/hudson/
+Content-Length: 0
+Date: Mon, 10 Apr 2017 23:08:46 GMT
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Hudson: 2.0.0
+X-Hudson-CLI-Port: 40951
+Expires: 0
+X-Hudson-Theme: default
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Mon, 10 Apr 2017 23:08:46 GMT
+
