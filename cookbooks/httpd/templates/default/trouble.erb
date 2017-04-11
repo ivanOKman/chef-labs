@@ -1,0 +1,24 @@
+<VirtualHost *:80>
+
+    ServerName Website
+    DocumentRoot "<%= @doc %>"
+    <Location />
+        Order allow,deny
+        Allow from all
+        Options Indexes
+    </Location>
+
+    ProxyPass / http://127.0.0.1:8080/
+
+  RewriteEngine On
+  RewriteCond <%= @maintenance_file %> -f
+  RewriteCond %{SCRIPT_FILENAME} !/maintenance.html
+  RewriteCond %{SCRIPT_FILENAME} !^(.+).(gif|png|jpg|css|js|swf)$
+  RewriteRule ^.*$ <%= @maintenance_file %> [L]
+
+</VirtualHost>  
+
+
+
+
+
