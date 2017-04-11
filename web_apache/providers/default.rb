@@ -5,17 +5,22 @@ action :install do
 end
 
 action :setup do
-  end
-
-action :stop do
-  service 'httpd' do
-    action :stop
+  cookbook_file '/var/www/html/index.html' do
+    source 'index.html'
+    mode '0644'
+    action :create
   end
 end
 
 action :start do
   service 'httpd' do
     action :start
+  end
+end
+
+action :stop do
+  service 'httpd' do
+    action :stop
   end
 end
 

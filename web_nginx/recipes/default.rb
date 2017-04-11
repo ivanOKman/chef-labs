@@ -1,12 +1,10 @@
+#
 # Cookbook Name:: web_nginx
 # Recipe:: default
-
-web "install nginx" do
-  action :install
-  provider "web_nginx"
-end
-
-web "setup default page" do
-  action :setup
-  provider "web_nginx"
+#
+# Copyright 2017, YOUR_COMPANY_NAME
+#
+web 'install nginx' do
+  action [ :install, :setup, :start]
+  provider 'web_nginx'
 end

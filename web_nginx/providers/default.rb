@@ -1,21 +1,26 @@
 action :install do
-  execute 'nginx_install' do 
-    command 'rpm -i http://nginx.org/packages/centos/6/x86_64/RPMS/nginx-1.8.1-1.el6.ngx.x86_64.rpm'
+  package 'nginx' do 
+    action :install
   end
 end
 
 action :setup do
-  end
-
-action :stop do
-  service 'nginx' do
-    action :stop
+  cookbook_file '/usr/share/nginx/html/index.html' do
+    source 'index.html'
+    mode '0644'
+    action :create
   end
 end
 
 action :start do
   service 'nginx' do
     action :start
+  end
+end
+
+action :stop do
+  service 'nginx' do
+    action :stop
   end
 end
 

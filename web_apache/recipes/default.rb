@@ -1,7 +1,12 @@
+#
 # Cookbook Name:: web_apache
 # Recipe:: default
 #
-web "install apache" do
-  action :install
-  provider "web_apache"
+# Copyright 2017, YOUR_COMPANY_NAME
+#
+# All rights reserved - Do Not Redistribute
+#
+web 'install httpd' do
+  action [ :install, :setup, :start]
+  provider 'web_apache'
 end
